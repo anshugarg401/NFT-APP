@@ -1,0 +1,23 @@
+{
+    "name" : "bernard",
+    "description": "bernard is a simple dog that loves to play and eat.",
+    "image": "https://ipfs.io/ipfs/QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "White"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Smiling"
+        },
+        {
+            "trait_type": "Stamina",
+            "value": 100
+        }
+    ]
+}

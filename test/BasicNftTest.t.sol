@@ -15,8 +15,8 @@ contract BasicNftTest is StdCheats, Test {
     DeployBasicNft public deployer;
     address public deployerAddress;
 
-    string public constant PUG_URI =
-        "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
+    string public constant DOG_URI =
+         "https://ipfs.io/ipfs/QmSvipFbNuUr11GhpRcZCTH7t46DKM6YjnUtjUkxt45Bmm";
     address public constant USER = address(1);
 
     function setUp() public {
@@ -37,18 +37,18 @@ contract BasicNftTest is StdCheats, Test {
 
     function testCanMintAndHaveABalance() public {
         vm.prank(USER);
-        basicNft.mintNft(PUG_URI);
+        basicNft.mintNft(DOG_URI);
 
         assert(basicNft.balanceOf(USER) == 1);
     }
 
     function testTokenURIIsCorrect() public {
         vm.prank(USER);
-        basicNft.mintNft(PUG_URI);
+        basicNft.mintNft(DOG_URI);
 
         assert(
             keccak256(abi.encodePacked(basicNft.tokenURI(0))) ==
-                keccak256(abi.encodePacked(PUG_URI))
+                keccak256(abi.encodePacked(DOG_URI))
         );
     }
 
@@ -59,5 +59,5 @@ contract BasicNftTest is StdCheats, Test {
         assert(basicNft.getTokenCounter() == startingTokenCount + 1);
     }
 
-    // can you get the coverage up?
+ 
 }

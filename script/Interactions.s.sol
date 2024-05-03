@@ -7,8 +7,8 @@ import {BasicNft} from "../src/BasicNft.sol";
 import {MoodNft} from "../src/MoodNft.sol";
 
 contract MintBasicNft is Script {
-    string public constant PUG_URI =
-        "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
+    string public constant DOG_URI =
+        "https://ipfs.io/ipfs/QmSvipFbNuUr11GhpRcZCTH7t46DKM6YjnUtjUkxt45Bmm";
     uint256 deployerKey;
 
     function run() external {
@@ -19,7 +19,7 @@ contract MintBasicNft is Script {
 
     function mintNftOnContract(address basicNftAddress) public {
         vm.startBroadcast();
-        BasicNft(basicNftAddress).mintNft(PUG_URI);
+        BasicNft(basicNftAddress).mintNft(DOG_URI);
         vm.stopBroadcast();
     }
 }
